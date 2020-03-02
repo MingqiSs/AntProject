@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ant.Domain.Core\Ant.Domain.Core.csproj" />
+    <ProjectReference Include="..\Ant.Infra.CrossCutting.Bus\Ant.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\Ant.Infra.Data\Ant.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
