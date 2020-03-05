@@ -1,23 +1,27 @@
 ﻿using Ant.Application.Interfaces;
 using Ant.Application.ViewModels;
+using Ant.Domain.Interfaces;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Ant.Application.AutoMapper.Services
 {
     public class UserAppService : IUserAppService
     {
+        //数据库操作
+        public IUserRepository _userRepository;
+        private readonly IMapper _mapper;
+        public UserAppService(IUserRepository userRepository, IMapper mapper) {
+            _userRepository = userRepository;
+            _mapper = mapper;
+        }
         public IEnumerable<UserViewModel> GetAll()
         {
-            return new List<UserViewModel>()
-            {
-                new UserViewModel
-                { Id=Guid.NewGuid(),
-                  BirthDate=DateTime.Now,
-                  Email="1111",Name="ant"
-                }
-            };
+            return _userRepository.GetAll().ProjectTo<UserViewModel>(_mapper.ConfigurationProvider);
         }
 
         public IList<UserViewModel> GetAllHistory(Guid id)

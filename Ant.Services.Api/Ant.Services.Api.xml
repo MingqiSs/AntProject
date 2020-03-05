@@ -4,6 +4,13 @@
         <name>Ant.Services.Api</name>
     </assembly>
     <members>
+        <member name="M:Ant.Services.Api.Configurations.DatabaseSetup.AddDatabaseSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
         <member name="M:Ant.Services.Api.Controllers.UserController.Get">
             <summary>
             获取用户

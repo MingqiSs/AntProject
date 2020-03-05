@@ -22,10 +22,10 @@ namespace Ant.Application.ViewModels
         [DisplayName("E-mail")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "The BirthDate is Required")]
+        [Required(ErrorMessage = "The CreateTime is Required")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        [DisplayName("Birth Date")]
-        public DateTime BirthDate { get; set; }
+        [DisplayName("CreateTime Date")]
+        public DateTime CreateTime { get; set; }
     }
 }

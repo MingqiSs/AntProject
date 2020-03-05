@@ -47,6 +47,8 @@ namespace Ant.Services.Api
 
             // .NET Native DI Abstraction
             services.AddDependencyInjectionSetup();
+            // AutoMapper Settings
+            services.AddAutoMapperSetup();
 
         }
 

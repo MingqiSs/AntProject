@@ -11,6 +11,7 @@
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/bozr" /></VisualStudio></ProjectExtensions>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ant.Application\Ant.Application.csproj" />
     <ProjectReference Include="..\Ant.Infra.CrossCutting.IoC\Ant.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 

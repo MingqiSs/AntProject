@@ -11,6 +11,11 @@ namespace Ant.Services.Api.Configurations
 {
     public static class DatabaseSetup
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         public static void AddDatabaseSetup(this IServiceCollection services, IConfiguration configuration)
         {
 
