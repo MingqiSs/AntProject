@@ -1,5 +1,7 @@
-﻿using Ant.Application.AutoMapper.Services;
-using Ant.Application.Interfaces;
+﻿using Ant.Application.Interfaces;
+using Ant.Application.Services;
+using Ant.Domain.CommandHandlers;
+using Ant.Domain.Commands;
 using Ant.Domain.Core.Bus;
 using Ant.Domain.Core.Notifications;
 using Ant.Domain.Interfaces;
@@ -19,7 +21,7 @@ namespace Ant.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             // Domain Bus (Mediator)
-          //  services.AddScoped<IMediatorHandler, InMemoryBus>();
+            services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             // ASP.NET Authorization Polices
            // services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>();
@@ -28,13 +30,13 @@ namespace Ant.Infra.CrossCutting.IoC
             services.AddScoped<IUserAppService, UserAppService>();
 
             // Domain - Events
-         //   services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
-          //  services.AddScoped<INotificationHandler<CustomerRegisteredEvent>, CustomerEventHandler>();
+            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+          //  services.AddScoped<INotificationHandler<UserRegisteredEvent>, UserRegisteredEvent>();
           //   services.AddScoped<INotificationHandler<CustomerUpdatedEvent>, CustomerEventHandler>();
           // services.AddScoped<INotificationHandler<CustomerRemovedEvent>, CustomerEventHandler>();
 
             // Domain - Commands
-            //services.AddScoped<IRequestHandler<RegisterNewCustomerCommand, bool>, CustomerCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterNewUserCommand, bool>, UserCommandHandler>();
             //services.AddScoped<IRequestHandler<UpdateCustomerCommand, bool>, CustomerCommandHandler>();
             //services.AddScoped<IRequestHandler<RemoveCustomerCommand, bool>, CustomerCommandHandler>();
 
