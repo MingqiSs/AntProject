@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Ant.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,8 +16,8 @@ namespace Ant.Services.Api.Configurations
 
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            //services.AddDbContext<EquinoxContext>(options =>
-            //    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AntContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         }
     }

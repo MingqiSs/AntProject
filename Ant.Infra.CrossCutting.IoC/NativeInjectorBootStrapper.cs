@@ -1,7 +1,11 @@
-﻿using Ant.Domain.Core.Bus;
+﻿using Ant.Application.AutoMapper.Services;
+using Ant.Application.Interfaces;
+using Ant.Domain.Core.Bus;
 using Ant.Domain.Core.Notifications;
+using Ant.Domain.Interfaces;
 using Ant.Infra.CrossCutting.Bus;
 using Ant.Infra.Data.Context;
+using Ant.Infra.Data.Repository;
 using Ant.Infra.Data.UoW;
 using Equinox.Domain.Interfaces;
 using MediatR;
@@ -15,16 +19,16 @@ namespace Ant.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             // Domain Bus (Mediator)
-            services.AddScoped<IMediatorHandler, InMemoryBus>();
+          //  services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             // ASP.NET Authorization Polices
            // services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>();
 
             // Application
-           // services.AddScoped<ICustomerAppService, CustomerAppService>();
+            services.AddScoped<IUserAppService, UserAppService>();
 
             // Domain - Events
-            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+         //   services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
           //  services.AddScoped<INotificationHandler<CustomerRegisteredEvent>, CustomerEventHandler>();
           //   services.AddScoped<INotificationHandler<CustomerUpdatedEvent>, CustomerEventHandler>();
           // services.AddScoped<INotificationHandler<CustomerRemovedEvent>, CustomerEventHandler>();
@@ -35,7 +39,7 @@ namespace Ant.Infra.CrossCutting.IoC
             //services.AddScoped<IRequestHandler<RemoveCustomerCommand, bool>, CustomerCommandHandler>();
 
             // Infra - Data
-         //   services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<AntContext>();
 

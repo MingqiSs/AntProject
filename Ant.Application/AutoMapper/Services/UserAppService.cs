@@ -10,7 +10,14 @@ namespace Ant.Application.AutoMapper.Services
     {
         public IEnumerable<UserViewModel> GetAll()
         {
-            return new List<UserViewModel>();
+            return new List<UserViewModel>()
+            {
+                new UserViewModel
+                { Id=Guid.NewGuid(),
+                  BirthDate=DateTime.Now,
+                  Email="1111",Name="ant"
+                }
+            };
         }
 
         public IList<UserViewModel> GetAllHistory(Guid id)

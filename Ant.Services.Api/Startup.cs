@@ -42,6 +42,11 @@ namespace Ant.Services.Api
             // Swagger Config
             services.AddSwaggerSetup();
 
+            services.AddDatabaseSetup(Configuration);
+
+            // .NET Native DI Abstraction
+            services.AddDependencyInjectionSetup();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

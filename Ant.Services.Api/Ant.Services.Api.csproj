@@ -14,5 +14,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ant.Infra.CrossCutting.IoC\Ant.Infra.CrossCutting.IoC.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ant.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,7 +13,12 @@ namespace Ant.Services.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        public IUserAppService _userAppService;
+        public  UserController(IUserAppService userAppService)
+        {
+            _userAppService = userAppService;
 
+        }
         /// <summary>
         /// 获取用户
         /// </summary>
@@ -21,8 +27,8 @@ namespace Ant.Services.Api.Controllers
         [Route("M101")]
         public IActionResult Get()
         {
-
-            return Ok();
+            var result = _userAppService.GetAll();
+            return Ok(result);
         }
 
 

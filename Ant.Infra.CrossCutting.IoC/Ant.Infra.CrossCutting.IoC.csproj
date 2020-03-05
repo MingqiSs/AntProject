@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ant.Application\Ant.Application.csproj" />
     <ProjectReference Include="..\Ant.Domain.Core\Ant.Domain.Core.csproj" />
     <ProjectReference Include="..\Ant.Infra.CrossCutting.Bus\Ant.Infra.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\Ant.Infra.Data\Ant.Infra.Data.csproj" />
