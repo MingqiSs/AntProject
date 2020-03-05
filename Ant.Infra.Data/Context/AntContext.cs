@@ -11,7 +11,7 @@ namespace Ant.Infra.Data.Context
     {
         public AntContext(DbContextOptions<AntContext> options) : base(options) { }
 
-        public DbSet<User> Customers { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
