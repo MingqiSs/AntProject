@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{AB00EB0D-2BC5-415E-B308-FE83CDCED196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Services.Api", "Ant.Services.Api\Ant.Services.Api.csproj", "{773C102B-D764-4268-AE18-F42AF5AEDC42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Services.Api", "Ant.Services.Api\Ant.Services.Api.csproj", "{773C102B-D764-4268-AE18-F42AF5AEDC42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{8120A40E-CDED-4098-B7DB-1A2AE3978B59}"
 EndProject
@@ -19,15 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{ACCEAD86-6B86-4097-AD8E-DC87BF0B5854}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Infra.Data", "Ant.Infra.Data\Ant.Infra.Data.csproj", "{FE734E8B-F7C9-4B6C-8FD3-B36CBD09E02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Infra.Data", "Ant.Infra.Data\Ant.Infra.Data.csproj", "{FE734E8B-F7C9-4B6C-8FD3-B36CBD09E02E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Infra.CrossCutting.Bus", "Ant.Infra.CrossCutting.Bus\Ant.Infra.CrossCutting.Bus.csproj", "{26BA5C32-6558-4936-A0D9-0E4782311908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Infra.CrossCutting.Bus", "Ant.Infra.CrossCutting.Bus\Ant.Infra.CrossCutting.Bus.csproj", "{26BA5C32-6558-4936-A0D9-0E4782311908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Infra.CrossCutting.IoC", "Ant.Infra.CrossCutting.IoC\Ant.Infra.CrossCutting.IoC.csproj", "{76B859F0-CF83-4147-9349-6B7D5CAC2D4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Infra.CrossCutting.IoC", "Ant.Infra.CrossCutting.IoC\Ant.Infra.CrossCutting.IoC.csproj", "{76B859F0-CF83-4147-9349-6B7D5CAC2D4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Domain.Core", "Ant.Domain.Core\Ant.Domain.Core.csproj", "{9D2A3CE3-706C-4066-B1AD-0AF61A2F668A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Domain.Core", "Ant.Domain.Core\Ant.Domain.Core.csproj", "{9D2A3CE3-706C-4066-B1AD-0AF61A2F668A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Domain", "Ant.Domain\Ant.Domain.csproj", "{F1E3F641-2D8B-43E3-A4FF-139F88650CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant.Domain", "Ant.Domain\Ant.Domain.csproj", "{F1E3F641-2D8B-43E3-A4FF-139F88650CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Application", "Ant.Application\Ant.Application.csproj", "{46923BB7-A526-433A-9A07-81294497A040}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{F1E3F641-2D8B-43E3-A4FF-139F88650CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1E3F641-2D8B-43E3-A4FF-139F88650CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1E3F641-2D8B-43E3-A4FF-139F88650CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46923BB7-A526-433A-9A07-81294497A040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46923BB7-A526-433A-9A07-81294497A040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46923BB7-A526-433A-9A07-81294497A040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46923BB7-A526-433A-9A07-81294497A040}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{76B859F0-CF83-4147-9349-6B7D5CAC2D4B} = {ACCEAD86-6B86-4097-AD8E-DC87BF0B5854}
 		{9D2A3CE3-706C-4066-B1AD-0AF61A2F668A} = {7FEC3750-1321-4405-B7D0-916808734D56}
 		{F1E3F641-2D8B-43E3-A4FF-139F88650CCA} = {7FEC3750-1321-4405-B7D0-916808734D56}
+		{46923BB7-A526-433A-9A07-81294497A040} = {8120A40E-CDED-4098-B7DB-1A2AE3978B59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C477AC1-0C3B-4D8F-AFC4-E6A01A4B9A81}

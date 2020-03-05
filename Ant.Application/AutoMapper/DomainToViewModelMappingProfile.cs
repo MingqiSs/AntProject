@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ant.Infra.Data.Repository
+namespace Ant.Application.AutoMapper
 {
-    public class Repository
+  public class DomainToViewModelMappingProfile 
     {
     }
 }

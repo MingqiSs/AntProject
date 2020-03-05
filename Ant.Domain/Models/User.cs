@@ -15,7 +15,7 @@ namespace Ant.Domain.Models
             CreateTime = createTime;
         }
 
-        // Empty constructor for EF
+        // Empty User  for EF
         protected User() { }
 
         public string Name { get; private set; }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Ant.Infra.Data.Context
 {
-   public class AntContext : DbContext
+    public class AntContext : DbContext
     {
         public AntContext(DbContextOptions<AntContext> options) : base(options) { }
 

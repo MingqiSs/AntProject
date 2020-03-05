@@ -11,6 +11,12 @@ namespace Ant.Services.Api.Configurations
     {
         public static void AddDatabaseSetup(this IServiceCollection services, IConfiguration configuration)
         {
+
+            if (services == null) throw new ArgumentNullException(nameof(services));
+
+            //services.AddDbContext<EquinoxContext>(options =>
+            //    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
         }
     }
     

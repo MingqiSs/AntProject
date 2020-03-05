@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ant.Services.Api.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -18,14 +19,16 @@ namespace Ant.Services.Api
         public Startup(IHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-               .SetBasePath(env.ContentRootPath)
-               .AddJsonFile("appsettings.json", true, true)
-               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
 
-            if (env.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    builder.AddUserSecrets<Startup>();
+            //}
+
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
@@ -35,6 +38,10 @@ namespace Ant.Services.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Swagger Config
+            services.AddSwaggerSetup();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +62,8 @@ namespace Ant.Services.Api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwaggerSetup();
         }
     }
 }
