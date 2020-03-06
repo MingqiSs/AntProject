@@ -1,6 +1,7 @@
 ﻿using Ant.Domain.Commands;
 using Ant.Domain.Core.Bus;
 using Ant.Domain.Core.Notifications;
+using Ant.Domain.Events;
 using Ant.Domain.Interfaces;
 using Ant.Domain.Models;
 using Equinox.Domain.Interfaces;
@@ -45,7 +46,7 @@ namespace Ant.Domain.CommandHandlers
 
             if (Commit())
             {
-               // Bus.RaiseEvent(new CustomerRegisteredEvent(customer.Id, customer.Name, customer.Email, customer.BirthDate));
+               Bus.RaiseEvent(new UserRegisteredEvent(user.Id, user.Name, user.Email, user.CreateTime));
             }
             return Task.FromResult(true);
         }

@@ -41,7 +41,6 @@ namespace Ant.Services.Api.Controllers
             return Ok(result);
         }
         [HttpPost]
-        [Authorize]
         [Route("M103")]
         public IActionResult Post([FromBody]UserViewModel userViewModel)
         {

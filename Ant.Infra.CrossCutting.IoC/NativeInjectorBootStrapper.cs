@@ -3,10 +3,14 @@ using Ant.Application.Services;
 using Ant.Domain.CommandHandlers;
 using Ant.Domain.Commands;
 using Ant.Domain.Core.Bus;
+using Ant.Domain.Core.Events;
 using Ant.Domain.Core.Notifications;
+using Ant.Domain.EventHandlers;
+using Ant.Domain.Events;
 using Ant.Domain.Interfaces;
 using Ant.Infra.CrossCutting.Bus;
 using Ant.Infra.Data.Context;
+using Ant.Infra.Data.EventStore;
 using Ant.Infra.Data.Repository;
 using Ant.Infra.Data.UoW;
 using Equinox.Domain.Interfaces;
@@ -31,7 +35,7 @@ namespace Ant.Infra.CrossCutting.IoC
 
             // Domain - Events
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
-          //  services.AddScoped<INotificationHandler<UserRegisteredEvent>, UserRegisteredEvent>();
+            services.AddScoped<INotificationHandler<UserRegisteredEvent>, UserEventHandler>();
           //   services.AddScoped<INotificationHandler<CustomerUpdatedEvent>, CustomerEventHandler>();
           // services.AddScoped<INotificationHandler<CustomerRemovedEvent>, CustomerEventHandler>();
 
@@ -47,7 +51,7 @@ namespace Ant.Infra.CrossCutting.IoC
 
             // Infra - Data EventSourcing
             //services.AddScoped<IEventStoreRepository, EventStoreSqlRepository>();
-            //services.AddScoped<IEventStore, SqlEventStore>();
+            services.AddScoped<IEventStore, SqlEventStore>();
             //services.AddScoped<EventStoreSqlContext>();
 
             // Infra - Identity

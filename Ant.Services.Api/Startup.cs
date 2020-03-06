@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ant.Services.Api.Configurations;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,10 +46,15 @@ namespace Ant.Services.Api
             // Setting DBContexts
             services.AddDatabaseSetup(Configuration);
 
+            services.AddMediatR(typeof(Startup));
+
             // .NET Native DI Abstraction
             services.AddDependencyInjectionSetup();
+
             // AutoMapper Settings
             services.AddAutoMapperSetup();
+
+       
 
         }
 
