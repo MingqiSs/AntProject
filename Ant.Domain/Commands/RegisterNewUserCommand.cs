@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ant.Domain.Validations;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,9 +15,8 @@ namespace Ant.Domain.Commands
 
         public override bool IsValid()
         {
-            //ValidationResult = new RegisterNewCustomerCommandValidation().Validate(this);
-            //return ValidationResult.IsValid;
-            return true;
+            ValidationResult = new RegisterNewUserCommandValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }
