@@ -22,8 +22,7 @@ namespace Ant.Services.Api.Configurations
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddDbContext<AntContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseMySql(configuration.GetConnectionString("DefaultConnection")));
         }
     }
     
