@@ -53,8 +53,8 @@ namespace Ant.Services.Api
 
             // AutoMapper Settings
             services.AddAutoMapperSetup();
-
-       
+            //EvntBus
+            services.AddEventBus(Configuration);
 
         }
 

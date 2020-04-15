@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Ant.Application.Interfaces;
 using Ant.Application.ViewModels;
+using DotNetCore.CAP;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,9 +16,11 @@ namespace Ant.Services.Api.Controllers
     public class UserController : ControllerBase
     {
         public IUserAppService _userAppService;
-        public  UserController(IUserAppService userAppService)
+        ICapPublisher _capPublisher;
+        public  UserController(IUserAppService userAppService, ICapPublisher capPublisher)
         {
             _userAppService = userAppService;
+            _capPublisher = capPublisher;
 
         }
         /// <summary>
@@ -53,6 +56,17 @@ namespace Ant.Services.Api.Controllers
             _userAppService.Register(userViewModel);
 
             return Ok(userViewModel);
+        }
+        /// <summary>
+        /// captest
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("M104")]
+        public IActionResult CapTest()
+        {
+             _capPublisher.PublishAsync("OrderCreated", 1);
+            return Ok();
         }
     }
 }
