@@ -16,6 +16,6 @@ namespace Ant.Services.Api.IntegrationEvents
         /// 
         /// </summary>
         /// <param name="event"></param>
-        void OrderCreated(int @event);
+        void OrderCreated(DateTime @event);
     }
 }

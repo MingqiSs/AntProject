@@ -1,4 +1,5 @@
 ﻿using Ant.Domain.Events;
+using DotNetCore.CAP;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,16 @@ namespace Ant.Domain.EventHandlers
     public class UserEventHandler :
           INotificationHandler<UserRegisteredEvent>
     {
-        public Task Handle(UserRegisteredEvent notification, CancellationToken cancellationToken)
+        ICapPublisher _capPublisher;
+        public UserEventHandler(ICapPublisher capPublisher)
+        {
+            _capPublisher = capPublisher;
+        }
+        public async Task Handle(UserRegisteredEvent notification, CancellationToken cancellationToken)
         {
             // Send some notification e-mail
-
-            return Task.CompletedTask;
+            await _capPublisher.PublishAsync("OrderCreated", DateTime.Now);
+          
         }
     }
 }

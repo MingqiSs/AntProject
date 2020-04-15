@@ -24,12 +24,11 @@ namespace Ant.Services.Api.IntegrationEvents
         }
         [NonAction]
         [CapSubscribe("OrderCreated")]
-        public void OrderCreated(int @event)
+        public void OrderCreated(DateTime @event)
         {
 
 
             //Do SomeThing
         }
-
     }
 }
