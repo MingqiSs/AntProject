@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ant.Application.Services
 {
@@ -38,10 +39,10 @@ namespace Ant.Application.Services
             return _mapper.Map<UserViewModel>(_userRepository.GetById(id));
         }
 
-        public void Register(UserViewModel userViewModel)
+        public Task<bool> Register(UserViewModel userViewModel)
         {
             var registerCommand = _mapper.Map<RegisterNewUserCommand>(userViewModel);
-            _bus.SendCommand(registerCommand);
+            return _bus.SendCommand(registerCommand);
         }
 
         public void Remove(Guid id)

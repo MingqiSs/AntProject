@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\项目\AntProject\Ant.Services.Api\Ant.Services.Api.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp3.1\Ant.Services.Api.xml</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Debug\netcoreapp3.1\</OutputPath>
   </PropertyGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/bozr" /></VisualStudio></ProjectExtensions>

@@ -24,16 +24,21 @@ namespace Ant.Services.Api.Controllers
 
         }
         /// <summary>
-        /// 获取用户
+        /// 获取用户列表
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [Route("M101")]
-        public IActionResult Get()
+        public IActionResult GetAll()
         {
             var result = _userAppService.GetAll();
             return Ok(result);
         }
+        /// <summary>
+        /// 获取用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
         [Route("M102")]
@@ -43,22 +48,27 @@ namespace Ant.Services.Api.Controllers
 
             return Ok(result);
         }
+        /// <summary>
+        /// 新增用户
+        /// </summary>
+        /// <param name="userViewModel"></param>
+        /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(typeof(bool), 200)]
         [Route("M103")]
-        public IActionResult Post([FromBody]UserViewModel userViewModel)
+        public async Task<IActionResult> Post([FromBody]UserViewModel userViewModel)
         {
             if (!ModelState.IsValid)
             {
                 //NotifyModelStateErrors();
-                return Ok(userViewModel);
+                return Ok(false);
             }
+            var r = await _userAppService.Register(userViewModel);
 
-            _userAppService.Register(userViewModel);
-
-            return Ok(userViewModel);
+            return Ok(r);
         }
         /// <summary>
-        /// captest
+        /// cap测试
         /// </summary>
         /// <returns></returns>
         [HttpPost]

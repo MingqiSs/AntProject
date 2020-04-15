@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ant.Application.Interfaces
 {
     public interface IUserAppService
     {
-        void Register(UserViewModel userViewModel);
+        Task<bool> Register(UserViewModel userViewModel);
         IEnumerable<UserViewModel> GetAll();
         UserViewModel GetById(Guid id);
         void Update(UserViewModel userViewModel);

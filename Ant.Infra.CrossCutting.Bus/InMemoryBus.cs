@@ -24,7 +24,11 @@ namespace Ant.Infra.CrossCutting.Bus
             return _mediator.Publish(@event);
         }
 
-        public Task SendCommand<T>(T command) where T : Command
+        //public Task SendCommand<T>(T command) where T : Command
+        //{
+        //    return _mediator.Send(command);
+        //}
+        public Task<bool> SendCommand<T>(T command) where T : Command
         {
             return _mediator.Send(command);
         }
